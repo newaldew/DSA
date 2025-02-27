@@ -13,7 +13,7 @@ class HashMap<K,V>{
         this.capacity=DEFAULT_CAPACITY;
         bucket=new ArrayList<>();
         for(int i=0;i<capacity;i++){
-            bucket.add(null);//If not initialized with null then everytime get() will throw IndexOutOfBound exception
+            bucket.add(null);//If not initialized with null then everytime get() will throw IndexOutOfBoundException
         }
         size=0;
     }
@@ -65,7 +65,7 @@ class HashMap<K,V>{
         size++;
 
         Node<K,V> newNode = new Node<>(key, value);
-        head=bucket.get(bucketIndex);
+        head=bucket.get(bucketIndex);//Important edge-case to remember
         newNode.next=head;//insert new key-value pair in start
         bucket.set(bucketIndex,newNode);
 
