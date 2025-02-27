@@ -10,13 +10,13 @@ class MyStack{
         this.queue = new LinkedList<>();
     }
     public void push(int x){//TC:O(N)
-        queue.add(x);
+        queue.offer(x);
         for(int i=0;i<queue.size()-1;i++){
-            queue.add(queue.poll());
+            queue.offer(queue.poll());
         }
     }
     public int pop(){//TC:O(1)
-       return queue.remove();
+       return queue.poll();
     }
     public int top(){//TC:O(1)
         return queue.peek();

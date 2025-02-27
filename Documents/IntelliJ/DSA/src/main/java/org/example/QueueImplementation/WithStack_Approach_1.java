@@ -1,7 +1,7 @@
 package org.example.QueueImplementation;
 
 import java.util.Stack;
-//Use this approach when lot of pop, top & size operations are involved and few push operations are involved
+//Use this approach when lot of pop & top operations are involved and few push operations are involved
 //SC:O(N)
 class QueueImp {
     Stack<Integer> s1;

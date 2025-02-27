@@ -17,12 +17,14 @@ class Node{
 class LRU{
     int capacity;
     Map<Integer,Node> map;
-    Node head = new Node(-1,-1);
-    Node tail = new Node(-1,-1);
+    Node head;
+    Node tail;
 
     public LRU(int capacity){
         this.capacity=capacity;
         map = new HashMap<>();
+        head = new Node(-1,-1);
+        tail = new Node(-1,-1);
         head.next=tail;
         tail.prev=head;
     }

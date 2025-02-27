@@ -71,7 +71,7 @@ class HashMap<K,V>{
 
         //Check if rehashing is required
         double loadFactor=(size*1.00)/capacity;
-        if(loadFactor>=0.75){
+        if(loadFactor>0.75){
             System.out.println("Load factor greater then 75%");
             rehash();
         }

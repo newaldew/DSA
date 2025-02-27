@@ -10,12 +10,13 @@ class StackImpl{
         this.top=-1;
         this.arr=new int[capacity];
     }
-    public void push(int x){//TC:O(1)
+    public boolean push(int x){//TC:O(1)
         if(top>=capacity){
-            return;
+            return false;
         }
         top++;
         arr[top]=x;
+        return true;
     }
     public int pop(){//TC:O(1)
         if(top==-1){
