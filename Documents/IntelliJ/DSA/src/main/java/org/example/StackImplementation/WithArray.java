@@ -3,12 +3,11 @@ package org.example.StackImplementation;
 //SC:O(N)
 class StackImpl{
     private int top;
-    private final int capacity;
+    private static final int capacity=100;
     private int[] arr;
 
-    public StackImpl(int capacity){
+    public StackImpl(){
         this.top=-1;
-        this.capacity=capacity;
         this.arr=new int[capacity];
     }
     public void push(int x){//TC:O(1)
@@ -39,7 +38,7 @@ class StackImpl{
 public class WithArray {
     public static void main(String[] args) {
 
-        StackImpl stack = new StackImpl(10);
+        StackImpl stack = new StackImpl();
         stack.push(3);
         stack.push(4);
         stack.push(2);

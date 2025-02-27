@@ -1,18 +1,15 @@
 package org.example.QueueImplementation;
 
-import java.util.Arrays;
 //SC:O(N)
 class MyQueue{
     private int[] arr;
     private int front;
     private int rear;
-    private final int capacity;
+    private static final int capacity=100;
     private int curSize;
 
-    public MyQueue(int capacity){
-        this.capacity=capacity;
+    public MyQueue(){
         arr = new int[capacity];
-        Arrays.fill(arr,-1);
         front=-1;
         rear=-1;
         curSize=0;
@@ -40,7 +37,7 @@ class MyQueue{
             return -1;
         }
 
-        return arr[front+1];
+        return arr[(front+1)%capacity];
     }
     public int size(){//TC:O(1)
         return curSize;
@@ -48,7 +45,7 @@ class MyQueue{
 }
 public class WithArray {
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue(5);
+        MyQueue queue = new MyQueue();
         queue.push(1);
         queue.push(2);
         queue.push(3);
